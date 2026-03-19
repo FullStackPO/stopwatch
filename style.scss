@@ -7,3 +7,58 @@ html,body{
     height: 100%;
     width: 100%;
 }
+@mixin button($bg-color){
+    height: 50px;
+    width: 100px;
+    font-size: large;
+    border-radius: 50px;
+    border: none;
+    background-color: $bg-color;
+    color: white;
+}
+main{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(72, 64, 64);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .container{
+        display: flex;
+        height: 30vh;
+        width: 40vw;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        border-radius: 10px;
+        box-shadow: 0 0 40px black;
+
+        h1{
+        color:rgb(175, 255, 56);
+        font-size: 100px;
+        }
+        .buttons{
+            display: flex;
+            gap:20px
+        }
+        #start{
+            @include button(rgb(0, 184, 0));
+        }
+       #stop{
+            @include button(rgb(184, 0, 0));
+        }
+        #reset{
+            @include button(rgb(0, 129, 203));
+        }
+
+    }
+
+}
+button:hover{
+    box-shadow: 0 0 10px white;
+}
+button:active{
+    scale: 0.95;
+}
